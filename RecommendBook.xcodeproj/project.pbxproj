@@ -17,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A71634902BE3232D0039AD29 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		A74E987F2BE0D50500FA4123 /* RecommendBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecommendBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A74E98822BE0D50500FA4123 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A74E98842BE0D50500FA4123 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 				A74E98902BE0D50600FA4123 /* LaunchScreen.storyboard */,
 				A74E98932BE0D50600FA4123 /* Info.plist */,
 				A74E988B2BE0D50500FA4123 /* RecommendBook.xcdatamodeld */,
+				A71634902BE3232D0039AD29 /* Config.xcconfig */,
 			);
 			path = RecommendBook;
 			sourceTree = "<group>";
