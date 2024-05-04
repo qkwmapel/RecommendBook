@@ -6,3 +6,16 @@
 //
 
 import UIKit
+
+class DetailVC : UIViewController {
+    private let detailView = DetailView()
+    
+    override func loadView() {
+        view = detailView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = UIColor.white
+    }
+}
