@@ -36,4 +36,18 @@ struct Book : Codable {
     let price : Int
     let thumbnail : String
     let title : String
+    enum CodingKeys : String, CodingKey {
+        case authors
+        case contents
+        case isbn
+        case price
+        case thumbnail
+        case title
+    }
+}
+
+struct Wish {
+    let authors : String
+    let title : String
+    let price : Int
 }

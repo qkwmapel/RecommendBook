@@ -8,9 +8,28 @@
 import UIKit
 
 class MainView : UIView {
-    let SearchBar = UISearchBar()
+    let SearchBar : UISearchBar = {
+        let search = UISearchBar()
+        search.placeholder = "검색어를 입력해주세요"
+        search.searchBarStyle = .minimal
+        return search
+    }()
     let tableView = UITableView()
-    let tabBar = UITabBar()
+    let tableLbl : UILabel = {
+       let Lbl = UILabel()
+        Lbl.text = "검색 결과"
+        Lbl.font = UIFont.boldSystemFont(ofSize: 25)
+        Lbl.translatesAutoresizingMaskIntoConstraints = false
+        return Lbl
+    }()
+    
+    let collectionLbl : UILabel = {
+       let Lbl = UILabel()
+        Lbl.text = "최근 본 책"
+        Lbl.font = UIFont.boldSystemFont(ofSize: 25)
+        Lbl.translatesAutoresizingMaskIntoConstraints = false
+        return Lbl
+    }()
     let collection : UICollectionView = {
            
            let layout = UICollectionViewFlowLayout()
@@ -36,15 +55,15 @@ class MainView : UIView {
         addSubview(SearchBar)
         addSubview(collection)
         addSubview(tableView)
-        addSubview(tabBar)
+        addSubview(tableLbl)
+        addSubview(collectionLbl)
+      
         SearchBar.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([SearchBar.topAnchor.constraint(equalTo: self.topAnchor, constant: 50), SearchBar.leadingAnchor.constraint(equalTo: self.leadingAnchor), SearchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor)])
         collection.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([collection.topAnchor.constraint(equalTo: self.SearchBar.bottomAnchor), collection.leadingAnchor.constraint(equalTo: self.leadingAnchor), collection.trailingAnchor.constraint(equalTo: self.trailingAnchor), collection.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -500)])
+        NSLayoutConstraint.activate([collectionLbl.topAnchor.constraint(equalTo: SearchBar.bottomAnchor, constant: 10),collectionLbl.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),collection.topAnchor.constraint(equalTo: collectionLbl.bottomAnchor, constant: 10), collection.leadingAnchor.constraint(equalTo: self.leadingAnchor), collection.trailingAnchor.constraint(equalTo: self.trailingAnchor), collection.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -500)])
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([tableView.topAnchor.constraint(equalTo: collection.bottomAnchor), tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor), tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor), tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100)])
-        tabBar.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([tabBar.topAnchor.constraint(equalTo: tableView.bottomAnchor), tabBar.leadingAnchor.constraint(equalTo: self.leadingAnchor),tabBar.trailingAnchor.constraint(equalTo: self.trailingAnchor), tabBar.bottomAnchor.constraint(equalTo: self.bottomAnchor)])
+        NSLayoutConstraint.activate([tableLbl.topAnchor.constraint(equalTo: collection.bottomAnchor, constant: 10), tableLbl.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),tableView.topAnchor.constraint(equalTo: tableLbl.bottomAnchor, constant: 10), tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor), tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor), tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)])
     }
 }
