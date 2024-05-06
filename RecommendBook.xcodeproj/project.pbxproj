@@ -18,7 +18,7 @@
 		A74E988A2BE0D50500FA4123 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A74E98892BE0D50500FA4123 /* Base */; };
 		A74E988F2BE0D50600FA4123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A74E988E2BE0D50600FA4123 /* Assets.xcassets */; };
 		A74E98922BE0D50600FA4123 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A74E98912BE0D50600FA4123 /* Base */; };
-		A7DE306A2BE8B86E00995438 /* RecommenBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7FD53672BE8B7CD00F2A4C0 /* RecommenBook.xcdatamodeld */; };
+		A7DE30D62BE92EC800995438 /* RecommendBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7DE30D42BE92EC800995438 /* RecommendBook.xcdatamodeld */; };
 		A7FD53602BE8628300F2A4C0 /* WishBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FD535F2BE8628300F2A4C0 /* WishBook.swift */; };
 		A7FD53622BE8629100F2A4C0 /* WishBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FD53612BE8629100F2A4C0 /* WishBookVC.swift */; };
 		A7FD53642BE8959E00F2A4C0 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FD53632BE8959E00F2A4C0 /* TabBarVC.swift */; };
@@ -31,7 +31,6 @@
 		A71634C52BE38F980039AD29 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		A71634C72BE39B550039AD29 /* APIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataManager.swift; sourceTree = "<group>"; };
 		A71634C92BE3A67C0039AD29 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		A74E987F2BE0D50500FA4123 /* RecommendBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = RecommendBook.app; path = "/Users/songjeonghun/Documents/github/feat#3/RecommendBook/build/Debug-iphoneos/RecommendBook.app"; sourceTree = "<absolute>"; };
 		A74E98822BE0D50500FA4123 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A74E98842BE0D50500FA4123 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A74E98862BE0D50500FA4123 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,12 +38,13 @@
 		A74E988E2BE0D50600FA4123 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A74E98912BE0D50600FA4123 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A74E98932BE0D50600FA4123 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7DE30D32BE92E8700995438 /* RecommendBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = RecommendBook.app; path = "/Users/songjeonghun/Documents/github/feat#3/RecommendBook/build/Debug-iphoneos/RecommendBook.app"; sourceTree = "<absolute>"; };
+		A7DE30D52BE92EC800995438 /* RecommendBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecommendBook.xcdatamodel; sourceTree = "<group>"; };
 		A7FD535D2BE61EDF00F2A4C0 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		A7FD535F2BE8628300F2A4C0 /* WishBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishBook.swift; sourceTree = "<group>"; };
 		A7FD53612BE8629100F2A4C0 /* WishBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishBookVC.swift; sourceTree = "<group>"; };
 		A7FD53632BE8959E00F2A4C0 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		A7FD53652BE8B0CD00F2A4C0 /* WishCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishCell.swift; sourceTree = "<group>"; };
-		A7FD53682BE8B7CD00F2A4C0 /* RecommenBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecommenBook.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +101,7 @@
 				A74E98902BE0D50600FA4123 /* LaunchScreen.storyboard */,
 				A74E98932BE0D50600FA4123 /* Info.plist */,
 				A7FD535D2BE61EDF00F2A4C0 /* Config.xcconfig */,
-				A7FD53672BE8B7CD00F2A4C0 /* RecommenBook.xcdatamodeld */,
+				A7DE30D42BE92EC800995438 /* RecommendBook.xcdatamodeld */,
 			);
 			path = RecommendBook;
 			sourceTree = "<group>";
@@ -123,7 +123,7 @@
 			);
 			name = RecommendBook;
 			productName = RecommendBook;
-			productReference = A74E987F2BE0D50500FA4123 /* RecommendBook.app */;
+			productReference = A7DE30D32BE92E8700995438 /* RecommendBook.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -177,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7DE30D62BE92EC800995438 /* RecommendBook.xcdatamodeld in Sources */,
 				A74E98872BE0D50500FA4123 /* ViewController.swift in Sources */,
 				A7FD53622BE8629100F2A4C0 /* WishBookVC.swift in Sources */,
 				A71634C62BE38F980039AD29 /* Data.swift in Sources */,
@@ -189,7 +190,6 @@
 				A71634C82BE39B550039AD29 /* APIDataManager.swift in Sources */,
 				A7FD53642BE8959E00F2A4C0 /* TabBarVC.swift in Sources */,
 				A7FD53662BE8B0CD00F2A4C0 /* WishCell.swift in Sources */,
-				A7DE306A2BE8B86E00995438 /* RecommenBook.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,14 +414,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A7FD53672BE8B7CD00F2A4C0 /* RecommenBook.xcdatamodeld */ = {
+		A7DE30D42BE92EC800995438 /* RecommendBook.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A7FD53682BE8B7CD00F2A4C0 /* RecommenBook.xcdatamodel */,
+				A7DE30D52BE92EC800995438 /* RecommendBook.xcdatamodel */,
 			);
-			currentVersion = A7FD53682BE8B7CD00F2A4C0 /* RecommenBook.xcdatamodel */;
-			name = RecommenBook.xcdatamodeld;
-			path = "/Users/songjeonghun/Documents/github/feat#3/RecommendBook/RecommendBook/RecommenBook.xcdatamodeld";
+			currentVersion = A7DE30D52BE92EC800995438 /* RecommendBook.xcdatamodel */;
+			name = RecommendBook.xcdatamodeld;
+			path = "/Users/songjeonghun/Documents/github/feat#3/RecommendBook/RecommendBook/RecommendBook.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
