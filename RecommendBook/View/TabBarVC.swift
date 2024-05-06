@@ -11,7 +11,7 @@ class TabBarVC: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tabBar.backgroundColor = UIColor.white
         tabBar.barTintColor = UIColor.white // TabBar 의 배경 색
         tabBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)// TabBar Item 이 선택되었을때의 색
         tabBar.unselectedItemTintColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1) // TabBar Item 의 기본 색

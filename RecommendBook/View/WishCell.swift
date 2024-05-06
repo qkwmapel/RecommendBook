@@ -19,7 +19,7 @@ class WishCell: UITableViewCell {
     let authorLbl : UILabel = {
        let Lbl = UILabel()
         Lbl.font = UIFont.systemFont(ofSize: 10)
-        Lbl.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        Lbl.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         Lbl.translatesAutoresizingMaskIntoConstraints = false
         return Lbl
     }()
@@ -43,7 +43,7 @@ class WishCell: UITableViewCell {
     func setConstraints() {
         addSubview(titleLbl)
         
-        NSLayoutConstraint.activate([titleLbl.centerYAnchor.constraint(equalTo: self.centerYAnchor), titleLbl.leadingAnchor.constraint(equalTo: self.leadingAnchor), titleLbl.trailingAnchor.constraint(equalTo: self.trailingAnchor)])
+        NSLayoutConstraint.activate([titleLbl.centerYAnchor.constraint(equalTo: self.centerYAnchor), titleLbl.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 10)])
         
         addSubview(authorLbl)
         
