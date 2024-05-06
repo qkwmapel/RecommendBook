@@ -23,6 +23,8 @@
 		A7FD53622BE8629100F2A4C0 /* WishBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FD53612BE8629100F2A4C0 /* WishBookVC.swift */; };
 		A7FD53642BE8959E00F2A4C0 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FD53632BE8959E00F2A4C0 /* TabBarVC.swift */; };
 		A7FD53662BE8B0CD00F2A4C0 /* WishCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FD53652BE8B0CD00F2A4C0 /* WishCell.swift */; };
+		A7FD53532BE4C99200F2A4C0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FD53522BE4C99200F2A4C0 /* DetailView.swift */; };
+		A7FD53552BE4C9A600F2A4C0 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FD53542BE4C9A600F2A4C0 /* DetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,7 @@
 		A71634C52BE38F980039AD29 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		A71634C72BE39B550039AD29 /* APIDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataManager.swift; sourceTree = "<group>"; };
 		A71634C92BE3A67C0039AD29 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		A74E987F2BE0D50500FA4123 /* RecommendBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecommendBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A74E98822BE0D50500FA4123 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A74E98842BE0D50500FA4123 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A74E98862BE0D50500FA4123 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +48,8 @@
 		A7FD53612BE8629100F2A4C0 /* WishBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishBookVC.swift; sourceTree = "<group>"; };
 		A7FD53632BE8959E00F2A4C0 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		A7FD53652BE8B0CD00F2A4C0 /* WishCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishCell.swift; sourceTree = "<group>"; };
+		A7FD53522BE4C99200F2A4C0 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		A7FD53542BE4C9A600F2A4C0 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +64,27 @@
 
 /* Begin PBXGroup section */
 		A71634BF2BE3882B0039AD29 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A71634C02BE388470039AD29 /* MainView.swift */,
+				A71634C32BE38F270039AD29 /* MainVC.swift */,
+				A7FD53522BE4C99200F2A4C0 /* DetailView.swift */,
+				A7FD53542BE4C9A600F2A4C0 /* DetailVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A71634C22BE38DF40039AD29 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A71634C52BE38F980039AD29 /* Data.swift */,
+				A71634C72BE39B550039AD29 /* APIDataManager.swift */,
+				A71634C92BE3A67C0039AD29 /* CoreDataManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A74E98762BE0D50500FA4123 = {
 			isa = PBXGroup;
 			children = (
 				A71634C02BE388470039AD29 /* MainView.swift */,
@@ -182,7 +208,10 @@
 				A74E98872BE0D50500FA4123 /* ViewController.swift in Sources */,
 				A7FD53622BE8629100F2A4C0 /* WishBookVC.swift in Sources */,
 				A71634C62BE38F980039AD29 /* Data.swift in Sources */,
+				A7FD53552BE4C9A600F2A4C0 /* DetailVC.swift in Sources */,
+				A7DE30E22BE940CE00995438 /* RecommendBook.xcdatamodeld in Sources */,
 				A74E98832BE0D50500FA4123 /* AppDelegate.swift in Sources */,
+				A7FD53532BE4C99200F2A4C0 /* DetailView.swift in Sources */,
 				A74E98852BE0D50500FA4123 /* SceneDelegate.swift in Sources */,
 				A71634C42BE38F270039AD29 /* MainViewController.swift in Sources */,
 				A7FD53602BE8628300F2A4C0 /* WishBook.swift in Sources */,

@@ -57,7 +57,7 @@ class MainView : UIView {
         addSubview(tableView)
         addSubview(tableLbl)
         addSubview(collectionLbl)
-        
+      
         SearchBar.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([SearchBar.topAnchor.constraint(equalTo: self.topAnchor, constant: 50), SearchBar.leadingAnchor.constraint(equalTo: self.leadingAnchor), SearchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor)])
