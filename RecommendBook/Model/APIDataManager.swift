@@ -62,6 +62,7 @@ class APIDataManager {
                     completion(data)
                 }
             }
+            task.resume()
         }
     }
     

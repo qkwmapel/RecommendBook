@@ -10,7 +10,6 @@ import UIKit
 class MainView : UIView {
     let SearchBar = UISearchBar()
     let tableView = UITableView()
-    let tabBar = UITabBar()
     let collection : UICollectionView = {
            
            let layout = UICollectionViewFlowLayout()
@@ -36,15 +35,12 @@ class MainView : UIView {
         addSubview(SearchBar)
         addSubview(collection)
         addSubview(tableView)
-        addSubview(tabBar)
         SearchBar.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([SearchBar.topAnchor.constraint(equalTo: self.topAnchor, constant: 50), SearchBar.leadingAnchor.constraint(equalTo: self.leadingAnchor), SearchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor)])
         collection.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([collection.topAnchor.constraint(equalTo: self.SearchBar.bottomAnchor), collection.leadingAnchor.constraint(equalTo: self.leadingAnchor), collection.trailingAnchor.constraint(equalTo: self.trailingAnchor), collection.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -500)])
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([tableView.topAnchor.constraint(equalTo: collection.bottomAnchor), tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor), tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor), tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100)])
-        tabBar.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([tabBar.topAnchor.constraint(equalTo: tableView.bottomAnchor), tabBar.leadingAnchor.constraint(equalTo: self.leadingAnchor),tabBar.trailingAnchor.constraint(equalTo: self.trailingAnchor), tabBar.bottomAnchor.constraint(equalTo: self.bottomAnchor)])
+        NSLayoutConstraint.activate([tableView.topAnchor.constraint(equalTo: collection.bottomAnchor), tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor), tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor), tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)])
     }
 }
