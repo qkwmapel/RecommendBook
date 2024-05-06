@@ -84,7 +84,7 @@ extension MainViewController : UITableViewDelegate,UITableViewDataSource {
         cell.priceLbl.text = String(searchItem[indexPath.row].price) + "원"
         return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        <#code#>
+//    }
 }
