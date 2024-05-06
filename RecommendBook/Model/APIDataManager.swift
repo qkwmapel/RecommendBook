@@ -24,7 +24,7 @@ private var apiKey: String {
 }
 
 class APIDataManager {
-    func readAPI(_ title : String,completion: @escaping ([Book])->Void) {
+    func readAPI(_ title : String,completion: @escaping (Result<[Book],Error>)->Void) {
         if let url = URL(string: "https://dapi.kakao.com/v3/search/book?target=title") {
             var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
             let queryItems: [URLQueryItem] = [URLQueryItem(name: "query", value: title)]
@@ -39,11 +39,13 @@ class APIDataManager {
                 if let error = error {
                     print(error)
                 }else if let data = data {
+                    print("A")
                     do {
                         let book = try JSONDecoder().decode(BookData.self, from: data)
-                        completion(book.documents)
+                        
+                        completion(.success(book.documents))
                     } catch {
-                        print("Decode Error: \(error)")
+                        completion(.failure(error))
                     }
                 }
             }
@@ -52,14 +54,14 @@ class APIDataManager {
         
     }
     
-    func readImage(_ image: String, completion: @escaping (Data)->Void) {
+    func readImage(_ image: String, completion: @escaping (Result<Data,Error>)->Void) {
         if let url = URL(string: image) {
             let task = URLSession.shared.dataTask(with: url) {
                 data, response, error in
                 if let error = error {
-                    print(error)
+                    completion(.failure(error))
                 }else if let data = data {
-                    completion(data)
+                    completion(.success(data))
                 }
             }
             task.resume()
