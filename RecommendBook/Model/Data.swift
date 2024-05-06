@@ -37,3 +37,8 @@ struct Book : Codable {
     let thumbnail : String
     let title : String
 }
+struct Wish {
+    let authors : String
+    let title : String
+    let price : Int
+}

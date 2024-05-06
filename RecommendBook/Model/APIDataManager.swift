@@ -54,6 +54,7 @@ class APIDataManager {
         
     }
     
+
     func readImage(_ image: String, completion: @escaping (Result<Data,Error>)->Void) {
         if let url = URL(string: image) {
             let task = URLSession.shared.dataTask(with: url) {
