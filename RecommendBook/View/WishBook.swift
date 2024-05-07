@@ -64,3 +64,5 @@ class WishBook : UIView {
         NSLayoutConstraint.activate([tableView.topAnchor.constraint(equalTo: stackView.bottomAnchor), tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor), tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor), tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)])
     }
 }
+
+

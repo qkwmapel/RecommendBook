@@ -14,6 +14,10 @@ class WishBookVC : UIViewController {
     override func loadView() {
         view = wishBook
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        wishBook.tableView.reloadData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         wishBook.tableView.dataSource = self
@@ -55,5 +59,14 @@ extension WishBookVC : UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) { if editingStyle == .delete {
+            CDM.deletetitle(num: indexPath.row, all: false)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
+
+
