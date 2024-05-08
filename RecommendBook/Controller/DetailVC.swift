@@ -51,7 +51,7 @@ class DetailVC : UIViewController {
     @objc func okAction() {
         self.dismiss(animated: true)
         if let delegate = alertDelegate {
-            alertDelegate?.alertP(current)
+            delegate.alertP(current)
         }
         
     }

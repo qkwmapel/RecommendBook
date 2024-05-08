@@ -24,10 +24,11 @@ private var apiKey: String {
 }
 
 class APIDataManager {
-    func readAPI(_ title : String,completion: @escaping (Result<[Book],Error>)->Void) {
+    
+    func readAPI(_ title : String,page : String,completion: @escaping (Result<BookData,Error>)->Void) {
         if let url = URL(string: "https://dapi.kakao.com/v3/search/book?target=title") {
             var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
-            let queryItems: [URLQueryItem] = [URLQueryItem(name: "query", value: title)]
+            let queryItems: [URLQueryItem] = [URLQueryItem(name: "query", value: title),URLQueryItem(name: "page", value: page),URLQueryItem(name: "size", value: "30")]
             
             components.queryItems = components.queryItems.map{ $0 + queryItems} ?? queryItems
             var request = URLRequest(url: components.url!)
@@ -39,11 +40,9 @@ class APIDataManager {
                 if let error = error {
                     print(error)
                 }else if let data = data {
-                    print("A")
                     do {
                         let book = try JSONDecoder().decode(BookData.self, from: data)
-                        
-                        completion(.success(book.documents))
+                        completion(.success(book))
                     } catch {
                         completion(.failure(error))
                     }

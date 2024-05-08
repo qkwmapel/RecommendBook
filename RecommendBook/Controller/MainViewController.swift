@@ -15,6 +15,9 @@ class MainViewController : UIViewController{
     let CDM = CoreDataManager()
     var searchItem = [Book]()
     var recentItem = [Book]()
+    var searchText = ""
+    var pageable = 1
+    var page = 1
     override func loadView() {
         view = mainView
     }
@@ -28,33 +31,58 @@ class MainViewController : UIViewController{
         mainView.tableView.register(RecentCell.self, forCellReuseIdentifier: RecentCell.identifier)
         self.view.backgroundColor = UIColor.white
     }
+    func loadMore() {
+        page += 1
+        API.readAPI(searchText,page: String(page)){ [weak self] search in
+            switch search {
+            case .success(let books) :
+                DispatchQueue.main.async {
+                    self?.searchItem += books.documents
+                    self?.mainView.tableView.reloadData()
+                }
+                
+            case .failure(let error) :
+                print(error)
+            }
+        }
+    }
 }
 extension MainViewController : UISearchBarDelegate {
     private func dismissKeyBoard() {
         mainView.SearchBar.resignFirstResponder()
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.mainView.SearchBar.showsCancelButton = true
+    }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         dismissKeyBoard()
         
         guard let search = searchBar.text, search.isEmpty == false else { return }
-        API.readAPI(search){ [weak self] search in
+        page = 1
+        searchText = search
+        API.readAPI(search,page: String(page)){ [weak self] search in
             switch search {
             case .success(let books) :
-                self?.searchItem = books
-                print(self?.searchItem[0].authors ?? "")
-                DispatchQueue.main.async {
-                    self?.mainView.tableView.reloadData()
+                self?.searchItem = books.documents
+                self?.pageable = books.meta.pagecnt
+                if self?.searchItem.isEmpty == true {
+                    print(1)
+                }else {
+                    DispatchQueue.main.async {
+                        self?.mainView.tableView.reloadData()
+                    }
                 }
+                
             case .failure(let error) :
                 print(error)
             }
         }
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        
-        //            self.isFiltering = false
-        //            self.tableView.reloadData()
+        self.mainView.SearchBar.showsCancelButton = false
+        self.mainView.SearchBar.resignFirstResponder()
+        self.mainView.SearchBar.text = ""
     }
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         self.mainView.SearchBar.resignFirstResponder()
@@ -117,7 +145,7 @@ extension MainViewController : UITableViewDelegate,UITableViewDataSource {
             guard let cell = mainView.tableView.dequeueReusableCell(withIdentifier: WishCell.identifier, for: indexPath) as? WishCell else {return UITableViewCell() }
             cell.titleLbl.text = searchItem[indexPath.row].title
             for i in searchItem[indexPath.row].authors {
-                cell.authorLbl.text = (cell.authorLbl.text ?? "") + i + ","
+                cell.authorLbl.text = (cell.authorLbl.text ?? "") + i + " "
             }
             cell.priceLbl.text = String(searchItem[indexPath.row].price) + "원"
             return cell
@@ -154,12 +182,17 @@ extension MainViewController : UITableViewDelegate,UITableViewDataSource {
         mainView.tableView.reloadData()
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if pageable >= page && indexPath.row == searchItem.count - 1 {
+            loadMore()
+        }
+    }
     
 }
 
 extension MainViewController : alertPresent {
     func alertP(_ title: Book) {
-        let alert = UIAlertController(title: "담던가 말던가", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "담던가 말던가ㅋ", message: nil, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default){ (action) in
             var name : String = ""
             if title.authors.isEmpty == false {

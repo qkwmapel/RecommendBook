@@ -12,6 +12,7 @@ class WishCell: UITableViewCell {
     
     let titleLbl : UILabel = {
        let Lbl = UILabel()
+        Lbl.setContentCompressionResistancePriority(.init(rawValue: 751), for: .horizontal)
         Lbl.font = UIFont.boldSystemFont(ofSize: 17)
         Lbl.translatesAutoresizingMaskIntoConstraints = false
         return Lbl
@@ -26,6 +27,7 @@ class WishCell: UITableViewCell {
     
     let priceLbl : UILabel = {
        let Lbl = UILabel()
+        Lbl.setContentCompressionResistancePriority(.init(rawValue: 752), for: .horizontal)
         Lbl.font = UIFont.systemFont(ofSize: 10)
         Lbl.translatesAutoresizingMaskIntoConstraints = false
         return Lbl
@@ -51,6 +53,6 @@ class WishCell: UITableViewCell {
         
         addSubview(priceLbl)
         
-        NSLayoutConstraint.activate([priceLbl.centerYAnchor.constraint(equalTo: authorLbl.centerYAnchor), priceLbl.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15)])
+        NSLayoutConstraint.activate([priceLbl.leadingAnchor.constraint(equalTo: authorLbl.trailingAnchor, constant: 15),priceLbl.centerYAnchor.constraint(equalTo: authorLbl.centerYAnchor), priceLbl.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15)])
     }
 }
