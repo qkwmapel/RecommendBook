@@ -43,13 +43,13 @@
 		A74E98912BE0D50600FA4123 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A74E98932BE0D50600FA4123 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7DE30D52BE92EC800995438 /* RecommendBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RecommendBook.xcdatamodel; sourceTree = "<group>"; };
-		A7DE30DE2BE9389900995438 /* RecommendBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = RecommendBook.app; path = "/Users/songjeonghun/Documents/github/feat#2/RecommendBook/build/Debug-iphoneos/RecommendBook.app"; sourceTree = "<absolute>"; };
 		A7DE30E72BE952F400995438 /* WishBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishBookVC.swift; sourceTree = "<group>"; };
 		A7DE30E92BE9C86100995438 /* RecentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCell.swift; sourceTree = "<group>"; };
 		A7DE30EC2BE9D5CE00995438 /* RecentCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCollectionCell.swift; sourceTree = "<group>"; };
+		A7DE30F82BEB50D700995438 /* RecommendBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecommendBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7DE30F92BEB510900995438 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		A7FD53522BE4C99200F2A4C0 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		A7FD53542BE4C9A600F2A4C0 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
-		A7FD535D2BE61EDF00F2A4C0 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		A7FD535F2BE8628300F2A4C0 /* WishBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishBook.swift; sourceTree = "<group>"; };
 		A7FD53632BE8959E00F2A4C0 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		A7FD53652BE8B0CD00F2A4C0 /* WishCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishCell.swift; sourceTree = "<group>"; };
@@ -93,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				A74E98812BE0D50500FA4123 /* RecommendBook */,
+				A7DE30F82BEB50D700995438 /* RecommendBook.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,8 +110,8 @@
 				A74E988E2BE0D50600FA4123 /* Assets.xcassets */,
 				A74E98902BE0D50600FA4123 /* LaunchScreen.storyboard */,
 				A74E98932BE0D50600FA4123 /* Info.plist */,
-				A7FD535D2BE61EDF00F2A4C0 /* Config.xcconfig */,
 				A7DE30D42BE92EC800995438 /* RecommendBook.xcdatamodeld */,
+				A7DE30F92BEB510900995438 /* Config.xcconfig */,
 			);
 			path = RecommendBook;
 			sourceTree = "<group>";
@@ -143,7 +144,7 @@
 			);
 			name = RecommendBook;
 			productName = RecommendBook;
-			productReference = A7DE30DE2BE9389900995438 /* RecommendBook.app */;
+			productReference = A7DE30F82BEB50D700995438 /* RecommendBook.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -360,7 +361,7 @@
 		};
 		A74E98972BE0D50600FA4123 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7FD535D2BE61EDF00F2A4C0 /* Config.xcconfig */;
+			baseConfigurationReference = A7DE30F92BEB510900995438 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -388,7 +389,7 @@
 		};
 		A74E98982BE0D50600FA4123 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7FD535D2BE61EDF00F2A4C0 /* Config.xcconfig */;
+			baseConfigurationReference = A7DE30F92BEB510900995438 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
