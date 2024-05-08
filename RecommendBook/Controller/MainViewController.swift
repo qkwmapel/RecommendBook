@@ -18,6 +18,7 @@ class MainViewController : UIViewController{
     var searchText = ""
     var pageable = 1
     var page = 1
+    var pagechk = false
     override func loadView() {
         view = mainView
     }
@@ -32,13 +33,23 @@ class MainViewController : UIViewController{
         self.view.backgroundColor = UIColor.white
     }
     func loadMore() {
+        if pagechk == true {
+            print("마지막")
+            return
+        }
         page += 1
         API.readAPI(searchText,page: String(page)){ [weak self] search in
+            guard let self = self else {return}
             switch search {
             case .success(let books) :
+                if books.documents.count == pageable {
+                    pagechk = true
+                    return
+                }
+                self.searchItem = self.searchItem + books.documents
                 DispatchQueue.main.async {
-                    self?.searchItem += books.documents
-                    self?.mainView.tableView.reloadData()
+                    
+                    self.mainView.tableView.reloadData()
                 }
                 
             case .failure(let error) :
@@ -60,6 +71,7 @@ extension MainViewController : UISearchBarDelegate {
         
         guard let search = searchBar.text, search.isEmpty == false else { return }
         page = 1
+        pagechk = false
         searchText = search
         API.readAPI(search,page: String(page)){ [weak self] search in
             switch search {
@@ -183,7 +195,7 @@ extension MainViewController : UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if pageable >= page && indexPath.row == searchItem.count - 1 {
+        if indexPath.row == searchItem.count - 1 {
             loadMore()
         }
     }
